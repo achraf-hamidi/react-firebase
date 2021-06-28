@@ -9,6 +9,7 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import SignUp from "./components/Signup";
 import Login from "./components/Login";
 import Home from "./components/Home";
+import Timetest from "./components/Timetest";
 
 import { AuthProvider } from "./Auth";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -24,6 +25,8 @@ function App() {
             <PrivateRoute exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/info" component={Timetest} /> 
+
           </div>
         </Router>
       </AuthProvider>

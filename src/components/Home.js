@@ -1,19 +1,14 @@
 import React, { useRef, useState, useEffect } from "react";
 
 import Header from "../components/Header";
-import HomeContent from "../Component/HomeContent";
 
 import app from "../firebase";
 import "firebase/firestore";
-import Book from "../img/book.jpg";
 
-import DayPicker from "react-day-picker";
 import "react-day-picker/lib/style.css";
 import Calender from "./Calender";
 
-import { Form, Button, Card } from "react-bootstrap";
 
-import Time from "./Time";
 
 const Home = () => {
   const email = app.auth().currentUser.email;
@@ -28,6 +23,7 @@ const Home = () => {
         >
           <Header />
           <Calender />
+        
         </div>
       </div>
     </>

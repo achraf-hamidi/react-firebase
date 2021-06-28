@@ -1,13 +1,16 @@
 import react from "react";
 import app from "../firebase";
-import { Navbar, Nav, Button, Link, FormControl, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
+import { Navbar, Nav, Button, FormControl, Form } from "react-bootstrap";
 function Header() {
   return (
     <Nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container-fluid">
-        <a href="#top" class="navbar-brand">
+        <Link to="/login" class="navbar-brand">
           <i class="fa fa-h-square"></i>Health Center
-        </a>
+        </Link>
+        
         <button
           class="navbar-toggler"
           type="button"
@@ -19,6 +22,9 @@ function Header() {
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+        <p>
+          test
+        </p>
 
         <div class="collapse navbar-collapse" id="navbarColor02">
           <ul class="navbar-nav me-auto"></ul>

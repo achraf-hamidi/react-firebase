@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 import app from "../firebase";
 import { AuthContext } from "../Auth";
 
-import { Navbar } from "react-bootstrap";
-import LoginForm from "../Component/LoginForm";
 import { Form, Button, Card } from "react-bootstrap";
 
 const Login = ({ history }) => {
