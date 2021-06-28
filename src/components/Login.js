@@ -1,12 +1,18 @@
 import React, { useCallback, useContext } from "react";
 import { withRouter, Redirect } from "react-router";
+
+import { Link } from "react-router-dom";
 import app from "../firebase";
 import { AuthContext } from "../Auth";
 
+import { Navbar } from "react-bootstrap";
+import LoginForm from "../Component/LoginForm";
+import { Form, Button, Card } from "react-bootstrap";
+
 const Login = ({ history }) => {
-  console.log("login")
+  console.log("login");
   const handleLogin = useCallback(
-    async event => {
+    async (event) => {
       event.preventDefault();
       const { email, password } = event.target.elements;
       try {
@@ -28,20 +34,65 @@ const Login = ({ history }) => {
   }
 
   return (
-    <div>
-      <h1>Log in</h1>
-      <form onSubmit={handleLogin}>
-        <label>
-          Email
-          <input name="email" type="email" placeholder="Email" />
-        </label>
-        <label>
-          Password
-          <input name="password" type="password" placeholder="Password" />
-        </label>
-        <button type="submit">Log in</button>
-      </form>
-    </div>
+  
+    <body>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          margin: "5em",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Card body>
+            <h1
+              style={{
+                textAlign: "center",
+              }}
+            >
+              Login
+            </h1>
+            <br />
+            <Form style={{ width: "9cm" }} onSubmit={handleLogin}>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control
+                  type="email"
+                  name="email"
+                  placeholder="Enter email"
+                />
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                />
+              </Form.Group>
+              <Button
+                variant="primary"
+                type="submit"
+                style={{ textAlign: "right" }}
+              >
+                Submit
+              </Button>
+              <p style={{ textAlign: "right" }}>
+                You don't have account <Link to="/signup">sign up?</Link>
+              </p>
+            </Form>
+          </Card>
+        </div>
+      </div>
+    </body>
   );
 };
 
